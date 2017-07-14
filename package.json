@@ -1,6 +1,6 @@
 {
   "name": "couchdocs",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "Command line tool to operate with JSON files in sync with CouchDB",
   "engines": {
     "node": ">=0.6.0"
@@ -27,9 +27,10 @@
   "homepage": "https://github.com/webcerebrium/couchdocs#readme",
   "dependencies": {
     "minimist": "^1.2.0",
-    "request": "^2.81.0"
+    "request": "^2.81.0",
+    "properties-reader": "0.0.15"
   },
   "devDependencies": {
-    "properties-reader": "0.0.15"
+    
   }
 }
