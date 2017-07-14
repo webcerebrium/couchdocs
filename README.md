@@ -8,7 +8,7 @@ npm install -g couchdocs
 
 ## Usage
 
-#### Create CouchDB Database from all merged documents in current folder
+#### Create CouchDB Database from all merged JSON documents in current folder
 ```
 couchdocs create
 ```
@@ -31,4 +31,6 @@ db=testdb
 url=http://localhost:5984/
 ```
 
-You could use `COUCH_URL` and `COUCH_DB` variables too for database specification
+You could use `COUCH_URL` and `COUCH_DB` variables too for database specification.
+
+Use `-v` to have a verbose output about what is going on.
