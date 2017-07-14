@@ -2,12 +2,21 @@
 Command-line tools to operate with JSON files in sync with CouchDB
 
 ## Installation
-`npm install -g couchdocs`
+```
+npm install -g couchdocs
+```
 
 ## Usage
 
-#### Create Database from all merged documents in current folder
-```couchdocs create .```
+#### Create CouchDB Database from all merged documents in current folder
+```
+couchdocs create
+```
+
+#### Delete existing and re-create CouchDB database from all merged documents in current folder
+```
+couchdocs recreate
+```
 
 #### Update Database document using local json file
 ```
@@ -21,3 +30,5 @@ Contains properties of CouchDB connection which should be applied for sync of JS
 db=testdb
 url=http://localhost:5984/
 ```
+
+You could use `COUCH_URL` and `COUCH_DB` variables too for database specification
