@@ -1,6 +1,6 @@
 {
   "name": "couchdocs",
-  "version": "1.0.5",
+  "version": "1.0.7",
   "description": "Command line tool to operate with JSON files in sync with CouchDB",
   "engines": {
     "node": ">=0.6.0"
@@ -8,8 +8,8 @@
   "bin": {
     "couchdocs": "./bin.js"
   },
-  "directories" : {
-    "lib" : "./lib"
+  "directories": {
+    "lib": "./lib"
   },
   "main": "index.js",
   "scripts": {
@@ -24,5 +24,12 @@
   "bugs": {
     "url": "https://github.com/webcerebrium/couchdocs/issues"
   },
-  "homepage": "https://github.com/webcerebrium/couchdocs#readme"
+  "homepage": "https://github.com/webcerebrium/couchdocs#readme",
+  "dependencies": {
+    "minimist": "^1.2.0",
+    "request": "^2.81.0"
+  },
+  "devDependencies": {
+    "properties-reader": "0.0.15"
+  }
 }
