@@ -1,3 +1,0 @@
-[couchdb]
-db=cloud_mock
-url=http://localhost:5984/
