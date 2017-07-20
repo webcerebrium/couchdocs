@@ -23,6 +23,14 @@ couchdocs recreate
 couchdocs update foo.json
 couchdocs update --id _design/backend design_backend.json
 ```
+
+### Save database into JSON files
+
+Each document becomes a separate file
+```
+couchdocs save
+```
+
 ## .couchdocs File Example
 Contains properties of CouchDB connection which should be applied for sync of JSON files in the current folder.
 ```
@@ -34,3 +42,18 @@ url=http://localhost:5984/
 You could use `COUCH_URL` and `COUCH_DB` variables too for database specification.
 
 Use `-v` to have a verbose output about what is going on.
+
+
+## coming soon:
+
+Read section in couchdocs file can declared what exact types or files can be safely autoupdated
+```
+couchdocs autoupdate
+```
+`[types]` can contain types that should be auto updated
+`[docs]` can contain documents that should be auto updated
+
+Verify JSON files in the current folder
+```
+couchdocs verify 
+```	
