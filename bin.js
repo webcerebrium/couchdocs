@@ -28,7 +28,7 @@ const getLocalPath = (args) => {
     const tmpobj = tmp.dirSync();
     localPath = tmpobj.name;
     out('Temporary Directory: ', tmpobj.name);
-    shell.exec('cd ' + localPath + ' && curl -s ' + url + ' | tar x' + (isVerbose() ? 'v':'') + 'z');
+    shell.exec('cd ' + localPath + ' && curl -s ' + url + ' | tar xz');
 
     resolve(localPath);
   });

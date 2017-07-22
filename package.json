@@ -1,6 +1,6 @@
 {
   "name": "couchdocs",
-  "version": "1.2.3",
+  "version": "1.2.4",
   "description": "Command line tool to operate with JSON files in sync with CouchDB",
   "engines": {
     "node": ">=0.6.0"
