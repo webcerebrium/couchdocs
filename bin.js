@@ -55,13 +55,10 @@ const done = (data) => {
 
 if (process.mainModule && process.mainModule.filename === __filename) {
    const args = parseArgs(process.argv, { '--': true });
-   const couchCredentials = require('./lib/credentials')(args);
+   
    const command = args._[2];
 
-   if (command === 'show') {
-      console.log(couchCredentials);
-
-   } else if (command === 'merge' || command === 'm') {
+   if (command === 'merge' || command === 'm') {
       merge('./')
 	.then(data => { 
 	   fs.writeFileSync('./_bulk_docs.json', JSON.stringify(data));
@@ -84,6 +81,7 @@ if (process.mainModule && process.mainModule.filename === __filename) {
    } else if (command === 'create' || command === 'c') {
 
       getLocalPath(args).then(path => {
+	const couchCredentials = require('./lib/credentials')(path, args);
         merge(path).then(data => { 
            const db = database(couchCredentials);
            db.create().then(() => (upload(data))).then(done).catch(err); 
@@ -93,6 +91,7 @@ if (process.mainModule && process.mainModule.filename === __filename) {
    } else if (command === 'recreate' || command === 'r') {
 
       getLocalPath(args).then(path => {
+        const couchCredentials = require('./lib/credentials')(path, args);
         merge(path).then(data => { 
 	   const db = database(couchCredentials);
 	   db.removeIfExists()
@@ -102,14 +101,22 @@ if (process.mainModule && process.mainModule.filename === __filename) {
       }).catch(err);
 
    } else if (command === 'autoupdate' || command === 'a') {
+
       getLocalPath(args).then(path => {
+        const couchCredentials = require('./lib/credentials')(path, args);
         autoupdate(couchCredentials, path, args).then(done).catch(err);
       }).catch(err);
 
    } else if (command === 'save' || command === 's') {
+
+      // save existing database into current folder
+      const couchCredentials = require('./lib/credentials')(path, args);
       save(couchCredentials, args).then(done).catch(err);
 
    } else if (command === 'update' || command === 'u') {
+
+      // update document from a current folder
+      const couchCredentials = require('./lib/credentials')(path, args);
       update(couchCredentials, args).then(done).catch(err);
 
    } else {
