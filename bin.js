@@ -103,7 +103,7 @@ if (process.mainModule && process.mainModule.filename === __filename) {
 
    } else if (command === 'autoupdate' || command === 'a') {
       getLocalPath(args).then(path => {
-        autoupdate(couchCredentials, args).then(done).catch(err);
+        autoupdate(couchCredentials, path, args).then(done).catch(err);
       }).catch(err);
 
    } else if (command === 'save' || command === 's') {
