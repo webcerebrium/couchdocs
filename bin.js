@@ -8,6 +8,7 @@ const database = require('./lib/database');
 const merge = require('./lib/merge');
 const save = require('./lib/save');
 const autoupdate = require('./lib/autoupdate');
+const backup = require('./lib/backup');
 const verify = require('./lib/verify');
 const zip = require('./lib/zip');
 const shell = require('shelljs');
@@ -106,6 +107,12 @@ if (process.mainModule && process.mainModule.filename === __filename) {
         const couchCredentials = require('./lib/credentials')(path, args);
         autoupdate(couchCredentials, path, args).then(done).catch(err);
       }).catch(err);
+
+   } else if (command === 'backup' || command === 'b') {
+
+      // backing up all databases using couchbackup
+      const couchCredentials = require('./lib/credentials')('./', args);
+      backup(couchCredentials, args).then(done).catch(err);
 
    } else if (command === 'save' || command === 's') {
 
