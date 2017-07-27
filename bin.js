@@ -85,7 +85,7 @@ if (process.mainModule && process.mainModule.filename === __filename) {
 	const couchCredentials = require('./lib/credentials')(path, args);
         merge(path).then(data => { 
            const db = database(couchCredentials);
-           db.create().then(() => (upload(data))).then(done).catch(err); 
+           db.create().then(() => (db.upload(data))).then(done).catch(err); 
 	}).catch(err);
       }).catch(err);
 
@@ -117,13 +117,13 @@ if (process.mainModule && process.mainModule.filename === __filename) {
    } else if (command === 'save' || command === 's') {
 
       // save existing database into current folder
-      const couchCredentials = require('./lib/credentials')(path, args);
+      const couchCredentials = require('./lib/credentials')('./', args);
       save(couchCredentials, args).then(done).catch(err);
 
    } else if (command === 'update' || command === 'u') {
 
       // update document from a current folder
-      const couchCredentials = require('./lib/credentials')(path, args);
+      const couchCredentials = require('./lib/credentials')('./', args);
       update(couchCredentials, args).then(done).catch(err);
 
    } else {
