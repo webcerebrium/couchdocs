@@ -19,7 +19,9 @@
     "type": "git",
     "url": "git+https://github.com/webcerebrium/couchdocs.git"
   },
-  "keywords": [],
+  "keywords": [
+    "couch", "couchdb", "nodejs", "terminal", "console", "cli", "nosql"
+  ],
   "author": "Web Cerebrium <webcerebrium@gmail.com> (https://webcerebrium.com/)",
   "bugs": {
     "url": "https://github.com/webcerebrium/couchdocs/issues"

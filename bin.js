@@ -127,7 +127,7 @@ if (process.mainModule && process.mainModule.filename === __filename) {
       update(couchCredentials, args).then(done).catch(err);
 
    } else {
-      err( [ "USAGE: couchdocs create|update|save|update|autoupdate|verify|merge" ].join('\n'));
+      err( [ "USAGE: couchdocs create|recreate|save|update|autoupdate|verify|merge" ].join('\n'));
    }
 
 } else {

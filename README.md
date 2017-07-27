@@ -71,8 +71,19 @@ You could also use `COUCH_URL` and `COUCH_DB` variables too for database specifi
 
 Use `-v` to have a verbose output about what is going on.
 
-## Reference to other handy CLI utilities
+## Disclaimer
 
-- [https://github.com/zaach/jsonlint]
-- [https://github.com/glynnbird/couchbackup]
+1. This CLI tool is designed *only for Linux/Unix* systems, so most of operations will not work on Windows if you have no Cygwin tools.
+2. Development is still in progress, please use at your own risk and feel free to leave your feedback in `Issues`.
+
+## Will be added before released
+- Support of big databases
+- More suitable error handling
+
+## You might also use
+
+Other useful CLI utilities:
+
+- https://github.com/zaach/jsonlint
+- https://github.com/glynnbird/couchbackup
 
