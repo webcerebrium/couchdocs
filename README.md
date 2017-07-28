@@ -6,7 +6,19 @@ Command-line tools to operate with JSON files in sync with CouchDB
 npm install -g couchdocs
 ```
 
-## Usage
+## .couchdocs File Configuration Example
+Optional file with name `.couchdocs` contains properties of CouchDB connection which should be applied for sync of JSON files in the current folder.
+```
+[couchdb]
+db=testdb
+url=http://localhost:5984/
+```
+You could also use `COUCH_URL` and `COUCH_DB` variables too for database specification. 
+`url` is optional, `http://localhost:5984/` is used by default, but you typically must specify `db` parameter for simplifying operations
+
+Use `-v` to have a verbose output about what is going on.
+
+## Operations
 
 #### (c) Create CouchDB Database from all merged JSON documents in current folder
 ```
@@ -67,25 +79,17 @@ Each database would be saved as compressed .tar.gz file. `couchbackup` will be s
 couchdocs backup
 ```
 
-## .couchdocs File Configuration Example
-Contains properties of CouchDB connection which should be applied for sync of JSON files in the current folder.
-```
-[couchdb]
-db=testdb
-url=http://localhost:5984/
-```
-You could also use `COUCH_URL` and `COUCH_DB` variables too for database specification.
-
-Use `-v` to have a verbose output about what is going on.
-
 ## Disclaimer
 
 1. This CLI tool is designed *only for Linux/Unix* systems, so most of operations will not work on Windows if you have no Cygwin tools.
 2. Development is still in progress, please use at your own risk and feel free to leave your feedback in `Issues`.
 
-## Will be added before released
+### Will be added before released
+- Improving verbosity levels
 - Support of big databases
 - More suitable error handling
+- Support for delayed publishing approach
+
 
 ## You might also use
 
