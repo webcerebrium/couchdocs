@@ -60,6 +60,13 @@ couchdocs save
 couchdocs zip
 ```
 
+### (b) Back up all databases using couchbackup into current folder
+
+Each database would be saved as compressed .tar.gz file. `couchbackup` will be salled, so it should be installed for that operation
+```
+couchdocs backup
+```
+
 ## .couchdocs File Configuration Example
 Contains properties of CouchDB connection which should be applied for sync of JSON files in the current folder.
 ```
