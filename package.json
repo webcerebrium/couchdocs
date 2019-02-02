@@ -1,6 +1,6 @@
 {
   "name": "couchdocs",
-  "version": "1.2.9",
+  "version": "1.2.10",
   "description": "Command line tool to operate with JSON files in sync with CouchDB",
   "engines": {
     "node": ">=0.6.0"
@@ -20,7 +20,13 @@
     "url": "git+https://github.com/webcerebrium/couchdocs.git"
   },
   "keywords": [
-    "couch", "couchdb", "nodejs", "terminal", "console", "cli", "nosql"
+    "couch",
+    "couchdb",
+    "nodejs",
+    "terminal",
+    "console",
+    "cli",
+    "nosql"
   ],
   "author": "Web Cerebrium <webcerebrium@gmail.com> (https://webcerebrium.com/)",
   "bugs": {
@@ -30,7 +36,7 @@
   "dependencies": {
     "minimist": "^1.2.0",
     "properties-reader": "0.0.15",
-    "request": "^2.81.0",
+    "request": "^2.88.0",
     "shelljs": "^0.7.8",
     "tmp": "0.0.31"
   },
